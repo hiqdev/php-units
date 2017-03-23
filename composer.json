@@ -4,7 +4,9 @@
     "description": "PHP Units of Measure Library",
     "keywords": [
         "php",
-        "units"
+        "units",
+        "measure",
+        "conversion"
     ],
     "homepage": "https://github.com/hiqdev/php-units",
     "license": "BSD-3-Clause",
