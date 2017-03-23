@@ -1,0 +1,14 @@
+package:
+    type:           library
+    name:           php-units
+    title:          PHP Units of Measure Library
+    headline:       PHP Units
+    keywords:       php, units, measure, conversion
+    namespace:      hiqdev\php\units
+    description:    |
+        Units of measure library providing:
+
+        - immutable objects
+            - units of measure
+            - quantity with unit
+        - conversion
