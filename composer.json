@@ -50,13 +50,13 @@
     },
     "autoload": {
         "psr-4": {
-            "hiqdev\\php\\units\\": "src",
-            "hiqdev\\php\\units\\res\\": "res",
-            "hiqdev\\php\\units\\yii2\\": "yii2"
+            "hiqdev\\php\\units\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
+            "hiqdev\\php\\units\\res\\": "res",
+            "hiqdev\\php\\units\\yii2\\": "yii2",
             "hiqdev\\php\\units\\tests\\": "tests"
         }
     },
