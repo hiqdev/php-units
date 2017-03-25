@@ -1,139 +1,120 @@
 <?php
+/**
+ * PHP Units of Measure Library
+ *
+ * @link      https://github.com/hiqdev/php-units
+ * @package   php-units
+ * @license   BSD-3-Clause
+ * @copyright Copyright (c) 2017, HiQDev (http://hiqdev.com/)
+ */
 
-return array (
-  'bit' => 
-  array (
+return  [
+  'bit' => [
     'parent' => '',
     'factor' => 1,
-  ),
-  'byte' => 
-  array (
+  ],
+  'byte' => [
     'parent' => 'bit',
     'factor' => 8,
-  ),
-  'kilobyte' => 
-  array (
+  ],
+  'kilobyte' => [
     'parent' => 'byte',
     'factor' => 1000,
-  ),
-  'megabyte' => 
-  array (
+  ],
+  'megabyte' => [
     'parent' => 'byte',
     'factor' => 1000000,
-  ),
-  'gigabyte' => 
-  array (
+  ],
+  'gigabyte' => [
     'parent' => 'byte',
     'factor' => 1000000000,
-  ),
-  'terabyte' => 
-  array (
+  ],
+  'terabyte' => [
     'parent' => 'byte',
     'factor' => 1000000000000,
-  ),
-  'petabyte' => 
-  array (
+  ],
+  'petabyte' => [
     'parent' => 'byte',
     'factor' => 10000000000000000,
-  ),
-  'exabyte' => 
-  array (
+  ],
+  'exabyte' => [
     'parent' => 'byte',
     'factor' => '10000000000000000000',
-  ),
-  'zettabyte' => 
-  array (
+  ],
+  'zettabyte' => [
     'parent' => 'byte',
     'factor' => '10000000000000000000000',
-  ),
-  'yottabyte' => 
-  array (
+  ],
+  'yottabyte' => [
     'parent' => 'byte',
     'factor' => '10000000000000000000000000',
-  ),
-  'kibibyte' => 
-  array (
+  ],
+  'kibibyte' => [
     'parent' => 'byte',
     'factor' => 1024,
-  ),
-  'mebibyte' => 
-  array (
+  ],
+  'mebibyte' => [
     'parent' => 'byte',
     'factor' => 1048576,
-  ),
-  'gibibyte' => 
-  array (
+  ],
+  'gibibyte' => [
     'parent' => 'byte',
     'factor' => 1073741824,
-  ),
-  'length' => 
-  array (
+  ],
+  'length' => [
     'parent' => '',
     'factor' => 1,
-  ),
-  'mm' => 
-  array (
+  ],
+  'mm' => [
     'parent' => 'length',
     'factor' => 1,
-  ),
-  'milimeter' => 
-  array (
+  ],
+  'milimeter' => [
     'parent' => 'mm',
     'factor' => 1,
-  ),
-  'cm' => 
-  array (
+  ],
+  'cm' => [
     'parent' => 'mm',
     'factor' => 10,
-  ),
-  'centimeter' => 
-  array (
+  ],
+  'centimeter' => [
     'parent' => 'cm',
     'factor' => 1,
-  ),
-  'm' => 
-  array (
+  ],
+  'm' => [
     'parent' => 'mm',
     'factor' => 1000,
-  ),
-  'metre' => 
-  array (
+  ],
+  'metre' => [
     'parent' => 'm',
     'factor' => 1,
-  ),
-  'meter' => 
-  array (
+  ],
+  'meter' => [
     'parent' => 'm',
     'factor' => 1,
-  ),
-  'km' => 
-  array (
+  ],
+  'km' => [
     'parent' => 'm',
     'factor' => 1000,
-  ),
-  'kilometre' => 
-  array (
+  ],
+  'kilometre' => [
     'parent' => 'km',
     'factor' => 1,
-  ),
-  'kilometer' => 
-  array (
+  ],
+  'kilometer' => [
     'parent' => 'km',
     'factor' => 1,
-  ),
-  'inch' => 
-  array (
+  ],
+  'inch' => [
     'parent' => 'length',
     'factor' => 254,
-  ),
-  'foot' => 
-  array (
+  ],
+  'foot' => [
     'parent' => 'inch',
     'factor' => 12,
-  ),
-  'yard' => 
-  array (
+  ],
+  'yard' => [
     'parent' => 'inch',
     'factor' => 36,
-  ),
-);
+  ],
+];

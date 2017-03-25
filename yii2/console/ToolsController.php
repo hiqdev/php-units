@@ -1,4 +1,12 @@
 <?php
+/**
+ * PHP Units of Measure Library
+ *
+ * @link      https://github.com/hiqdev/php-units
+ * @package   php-units
+ * @license   BSD-3-Clause
+ * @copyright Copyright (c) 2017, HiQDev (http://hiqdev.com/)
+ */
 
 namespace hiqdev\php\units\yii2\console;
 
@@ -7,7 +15,6 @@ use Yii;
 
 class ToolsController extends \hidev\controllers\CommonController
 {
-
     public function actionRes()
     {
         $src  = Yii::getAlias('@hiqdev/php/units/res/units-tree.yml');
