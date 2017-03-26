@@ -11,7 +11,6 @@
 namespace hiqdev\php\units\tests\tree;
 
 use hiqdev\php\units\tree\TreeConverter;
-use hiqdev\php\units\tree\NodeUnit;
 
 /**
  * @author Andrii Vasyliev <sol@hiqdev.com>
@@ -53,5 +52,4 @@ class UnitTest extends \PHPUnit\Framework\TestCase
         $this->assertSame($this->kilo, $KB->getCanon());
         $this->assertSame($this->mega, $MB->getCanon());
     }
-
 }

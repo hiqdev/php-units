@@ -12,3 +12,8 @@ package:
             - units of measure
             - quantity with unit
         - conversion
+
+php-cs-fixer:
+    finder:
+        notPath:
+            - res
