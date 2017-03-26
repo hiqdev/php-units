@@ -42,7 +42,7 @@ class TreeUnit extends RootUnit
      * @param RootUnit $parent
      * @param int|float|string|callable $method
      */
-    public function __construct(TreeConverter $converter, string $name, RootUnit $parent, $method)
+    public function __construct(TreeConverter $converter, $name, RootUnit $parent, $method)
     {
         parent::__construct($converter, $name);
         $this->parent = $parent;

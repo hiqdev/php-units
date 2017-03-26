@@ -33,7 +33,7 @@ class Unit implements UnitInterface
      */
     private $converter;
 
-    private function __construct(string $name, ConverterInterface $converter)
+    private function __construct($name, ConverterInterface $converter)
     {
         $this->name = $name;
         $this->converter = $converter;

@@ -112,6 +112,10 @@ class TreeConverter implements ConverterInterface
             throw new NotConvertibleException("no parent for: $name");
         }
 
+        if ($parent === '') {
+            return new RootUnit($this, $name);
+        }
+
         if (isset($data['method'])) {
             $method = $data['method'];
         } elseif (isset($data['factor'])) {
@@ -120,8 +124,6 @@ class TreeConverter implements ConverterInterface
             throw new NotConvertibleException("no method for: $name");
         }
 
-        return $parent === ''
-            ? new RootUnit($this, $name)
-            : new TreeUnit($this, $name, $this->getTreeUnit($parent), $method);
+        return new TreeUnit($this, $name, $this->getTreeUnit($parent), $method);
     }
 }

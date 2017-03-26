@@ -52,7 +52,7 @@ class RootUnit implements UnitInterface
      * @param TreeConverter $converter
      * @param string $name
      */
-    public function __construct(TreeConverter $converter, string $name)
+    public function __construct(TreeConverter $converter, $name)
     {
         $this->converter = $converter;
         $this->name = $name;
