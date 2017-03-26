@@ -13,6 +13,14 @@ namespace hiqdev\php\units;
 /**
  * Unit of measurement.
  *
+ * Provides:
+ *
+ * - name, eg: bit, byte, kilobyte, ... mm, cm, m, km, ...
+ * - measure: bit, length, temperature
+ * - equals: kilobyte = KB
+ * - isConvertible: bit <-> byte, m <-> km
+ * - convert: 1 byte = 8 bit
+ *
  * @author Andrii Vasyliev <sol@hiqdev.com>
  */
 interface UnitInterface
