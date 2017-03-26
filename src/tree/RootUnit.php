@@ -96,8 +96,7 @@ class RootUnit implements UnitInterface
     {
         $node = $this->getNode($other);
 
-        return ($this === $node->getParent() && $node->getFactor() === 1) ||
-               ($node === $this->getParent() && $this->getFactor() === 1);
+        return $this === $node->getCanon() || $node === $this->getCanon();
     }
 
     public function getCanon()

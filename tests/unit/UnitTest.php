@@ -48,7 +48,9 @@ class UnitTest extends \PHPUnit\Framework\TestCase
     {
         $this->assertTrue($this->byte->equals(Unit::byte()));
         $this->assertTrue($this->kilo->equals(Unit::KB()));
+        $this->assertTrue(Unit::KB()->equals($this->kilo));
         $this->assertFalse($this->byte->equals($this->kilo));
+        $this->assertFalse($this->byte->equals(Unit::bit()));
     }
 
     public function testGetMeasure()

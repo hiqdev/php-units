@@ -74,13 +74,17 @@ class NodeUnit extends RootUnit
         return $this->canon;
     }
 
+    /**
+     * Returns canonical unit.
+     * @return RootUnit
+     */
     public function findCanon()
     {
         return $this->getFactor() === 1 ? $this->getParent() : $this;
     }
 
     /**
-     * @var RootUnit
+     * @return RootUnit
      */
     public function getParent()
     {
