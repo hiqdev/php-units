@@ -60,6 +60,25 @@ class NodeUnit extends RootUnit
         return $this->factor;
     }
 
+    private $canon;
+
+    /**
+     * @var RootUnit
+     */
+    public function getCanon()
+    {
+        if ($this->canon === null) {
+            $this->canon = $this->findCanon();
+        }
+
+        return $this->canon;
+    }
+
+    public function findCanon()
+    {
+        return $this->getFactor() === 1 ? $this->getParent() : $this;
+    }
+
     /**
      * @var RootUnit
      */

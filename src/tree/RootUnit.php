@@ -100,6 +100,11 @@ class RootUnit implements UnitInterface
                ($node === $this->getParent() && $this->getFactor() === 1);
     }
 
+    public function getCanon()
+    {
+        return $this;
+    }
+
     /**
      * {@inheritdoc}
      */
