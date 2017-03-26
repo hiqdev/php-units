@@ -15,11 +15,9 @@ use hiqdev\php\units\exceptions\NotConvertibleException;
 use hiqdev\php\units\UnitInterface;
 
 /**
- * Units Tree Convertor.
+ * Tree Converter.
  *
- * Uses node units to keep units info.
- *
- * Holds units in form of tree:
+ * Uses node units to keep units info in a tree form:
  *
  * - bit:           parent=bit          factor  = 1
  * - byte:          parent=bit          factor  = 1
@@ -29,7 +27,7 @@ use hiqdev\php\units\UnitInterface;
  * - temperature:   parent=temperature  factor  = 1
  * - celcius:       parent=temperature  factor  = 1
  * - fahrenheit:    parent=temperature  method  = function ($x) { return ($x-32)*5/9; }
- * - kekvin:        parent=temperature  method  = function ($x) { return $x+273.16; }
+ * - kelvin:        parent=temperature  method  = function ($x) { return $x+273.16; }
  *
  * @author Andrii Vasyliev <sol@hiqdev.com>
  */
