@@ -24,7 +24,7 @@ class RootUnit implements UnitInterface
     /**
      * @var TreeConverter
      */
-    protected $converter;
+    protected $tree;
 
     /**
      * @var string
@@ -60,12 +60,12 @@ class RootUnit implements UnitInterface
     }
 
     /**
-     * @param TreeConverter $converter
+     * @param TreeConverter $tree
      * @param string $name
      */
-    public function __construct(TreeConverter $converter, $name)
+    public function __construct(TreeConverter $tree, $name)
     {
-        $this->converter = $converter;
+        $this->tree = $tree;
         $this->name = $name;
     }
 
@@ -165,6 +165,6 @@ class RootUnit implements UnitInterface
 
     public function getNode(UnitInterface $unit)
     {
-        return $this->converter->getNode($unit);
+        return $this->tree->getNode($unit);
     }
 }

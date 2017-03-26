@@ -37,14 +37,14 @@ class NodeUnit extends RootUnit
     protected $method;
 
     /**
-     * @param TreeConverter $converter
+     * @param TreeConverter $tree
      * @param string $name
      * @param RootUnit $parent
      * @param int|float|string|callable $method
      */
-    public function __construct(TreeConverter $converter, $name, RootUnit $parent, $method)
+    public function __construct(TreeConverter $tree, $name, RootUnit $parent, $method)
     {
-        parent::__construct($converter, $name);
+        parent::__construct($tree, $name);
         $this->parent = $parent;
         if ($method instanceof Closure) {
             $this->method = $method;
