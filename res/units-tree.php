@@ -4,6 +4,7 @@ return array (
   'bit' => 
   array (
     'parent' => '',
+    'factor' => 1,
   ),
   'byte' => 
   array (
@@ -93,10 +94,12 @@ return array (
   'length' => 
   array (
     'parent' => '',
+    'factor' => 1,
   ),
   'mm' => 
   array (
     'parent' => 'length',
+    'factor' => 1,
   ),
   'milimeter' => 
   array (

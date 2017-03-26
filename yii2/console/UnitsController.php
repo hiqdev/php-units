@@ -39,6 +39,7 @@ class UnitsController extends \hidev\controllers\CommonController
             if (is_array($data)) {
                 $this->units[$name] = [
                     'parent' => $parent,
+                    'factor' => 1,
                 ];
                 $this->prepareUnits($name, $data);
             } else {
