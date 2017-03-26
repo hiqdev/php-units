@@ -1,9 +1,15 @@
 bit:
     byte:
         byte:       8
-        kilobyte:   1000
-        megabyte:   1000000
-        gigabyte:   1000000000
+        kilobyte:
+            kilobyte:   1000
+            KB:         1
+        megabyte:
+            megabyte:   1000000
+            MB:         1
+        gigabyte:
+            gigabyte:   1000000000
+            GB:         1
         terabyte:   1000000000000
         petabyte:   1000000000000000
         exabyte:    1000000000000000000

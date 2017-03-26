@@ -55,6 +55,11 @@ class NodeUnit extends RootUnit
         }
     }
 
+    public function getFactor()
+    {
+        return $this->factor;
+    }
+
     /**
      * @var RootUnit
      */

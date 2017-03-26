@@ -38,9 +38,19 @@ class RootUnit implements UnitInterface
         return $this->name;
     }
 
+    public function getParent()
+    {
+        return $this;
+    }
+
     public function getRoot()
     {
         return $this;
+    }
+
+    public function getFactor()
+    {
+        return null;
     }
 
     public function getMeasure()
@@ -79,7 +89,15 @@ class RootUnit implements UnitInterface
      */
     public function equals(UnitInterface $other)
     {
-        return $this->getName() === $other->getName();
+        return $this->getName() === $other->getName() || $this->isAlias($other);
+    }
+
+    public function isAlias(UnitInterface $other)
+    {
+        $node = $this->getNode($other);
+
+        return ($this === $node->getParent() && $node->getFactor() === 1) ||
+               ($node === $this->getParent() && $this->getFactor() === 1);
     }
 
     /**
@@ -105,7 +123,7 @@ class RootUnit implements UnitInterface
      */
     public function convert(UnitInterface $other, $quantity)
     {
-        $other = $this->converter->getNode($other);
+        $other = $this->getNode($other);
         if ($other->equals($this->getParent())) {
             return $this->mutliplyByFactor($quantity);
         }
@@ -133,5 +151,10 @@ class RootUnit implements UnitInterface
         }
 
         return $this->getCalculator()->divide($quantity, $this->factor);
+    }
+
+    public function getNode(UnitInterface $unit)
+    {
+        return $this->converter->getNode($unit);
     }
 }

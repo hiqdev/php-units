@@ -16,15 +16,30 @@ return array (
     'parent' => 'byte',
     'factor' => 1000,
   ),
+  'KB' => 
+  array (
+    'parent' => 'kilobyte',
+    'factor' => 1,
+  ),
   'megabyte' => 
   array (
     'parent' => 'byte',
     'factor' => 1000000,
   ),
+  'MB' => 
+  array (
+    'parent' => 'megabyte',
+    'factor' => 1,
+  ),
   'gigabyte' => 
   array (
     'parent' => 'byte',
     'factor' => 1000000000,
+  ),
+  'GB' => 
+  array (
+    'parent' => 'gigabyte',
+    'factor' => 1,
   ),
   'terabyte' => 
   array (
