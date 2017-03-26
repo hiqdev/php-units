@@ -11,8 +11,8 @@
 return [
     'components' => [
         'config' => [
-            'tools' => [
-                'class' => \hiqdev\php\billing\yii2\console\ToolsController::class,
+            'units' => [
+                'class' => \hiqdev\php\units\yii2\console\UnitsController::class,
             ],
         ],
     ],

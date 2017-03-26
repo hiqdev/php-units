@@ -13,17 +13,22 @@ namespace hiqdev\php\units\yii2\console;
 use Symfony\Component\Yaml\Yaml;
 use Yii;
 
-class ToolsController extends \hidev\controllers\CommonController
+class UnitsController extends \hidev\controllers\CommonController
 {
-    public function actionRes()
+    public function actionPrepare()
     {
         $src  = Yii::getAlias('@hiqdev/php/units/res/units-tree.yml');
         $tree = Yaml::parse(file_get_contents($src));
         $this->prepareUnits('', $tree);
         $dump = var_export($this->units, true);
 
-        $dst  = Yii::getAlias('@hiqdev/php/units/res/units-tree.php');
-        file_put_contents($dst, "<?php\n\nreturn $dump;\n");
+        $dst = Yii::getAlias('@hiqdev/php/units/res/units-tree.php');
+        $old = file_get_contents($dst);
+        $new = "<?php\n\nreturn $dump;\n";
+        if ($old !== $new) {
+            echo "Written units-tree.php\n";
+            file_put_contents($dst, $new);
+        }
     }
 
     protected $units = [];
@@ -34,7 +39,6 @@ class ToolsController extends \hidev\controllers\CommonController
             if (is_array($data)) {
                 $this->units[$name] = [
                     'parent' => $parent,
-                    'factor' => 1,
                 ];
                 $this->prepareUnits($name, $data);
             } else {

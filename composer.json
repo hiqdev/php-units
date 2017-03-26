@@ -62,7 +62,7 @@
     },
     "extra": {
         "config-plugin": {
-            "hidev": "tools/config/hidev.php"
+            "hidev": "yii2/config/hidev.php"
         }
     },
     "repositories": [
