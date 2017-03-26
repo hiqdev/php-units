@@ -11,6 +11,7 @@
 namespace hiqdev\php\units\tree;
 
 use hiqdev\php\units\calculators\PhpCalculator;
+use hiqdev\php\units\exceptions\NotConvertibleException;
 use hiqdev\php\units\UnitInterface;
 
 /**
@@ -128,15 +129,20 @@ class RootUnit implements UnitInterface
     public function convert(UnitInterface $other, $quantity)
     {
         $other = $this->getNode($other);
+
+        if ($this->equals($other)) {
+            return $quantity;
+        }
+
         if ($other->equals($this->getParent())) {
-            return $this->mutliplyByFactor($quantity);
+            return $this->multiplyByFactor($quantity);
         }
 
         if ($this->equals($other->getParent())) {
             return $other->divideByFactor($quantity);
         }
 
-        return NotConvertibleException('not yet implemented: ' . $this->getName() . ' -> ' . $other->getName());
+        throw new NotConvertibleException('not yet implemented: ' . $this->getName() . ' -> ' . $other->getName());
     }
 
     public function multiplyByFactor($quantity)

@@ -66,7 +66,10 @@ class UnitTest extends \PHPUnit\Framework\TestCase
 
     public function testConvert()
     {
+        $this->assertSame(1, $this->byte->convert($this->byte, 1));
         $this->assertSame(1, $this->byte->convert($this->kilo, 1000));
         $this->assertSame(1, $this->byte->convert($this->mega, 1000000));
+        $this->assertSame(1000, $this->kilo->convert($this->byte, 1));
+        $this->assertSame(1000000, $this->mega->convert($this->byte, 1));
     }
 }
