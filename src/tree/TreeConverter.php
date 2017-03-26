@@ -17,7 +17,7 @@ use hiqdev\php\units\UnitInterface;
 /**
  * Units Tree Convertor.
  *
- * Uses TreeUnit to keep units info.
+ * Uses node units to keep units info.
  *
  * Holds units in form of tree:
  *
@@ -57,7 +57,7 @@ class TreeConverter implements ConverterInterface
 
     public function equals(UnitInterface $unit, UnitInterface $other)
     {
-        return $this->getTreeUnit($unit)->equals($other);
+        return $this->getNode($unit)->equals($other);
     }
 
     /**
@@ -65,12 +65,12 @@ class TreeConverter implements ConverterInterface
      */
     public function isConvertible(UnitInterface $unit, UnitInterface $other)
     {
-        return $this->getTreeUnit($unit)->isConvertible($other);
+        return $this->getNode($unit)->isConvertible($other);
     }
 
     public function getMeasure(UnitInterface $unit)
     {
-        return $this->getTreeUnit($unit)->getMeasure();
+        return $this->getNode($unit)->getMeasure();
     }
 
     /**
@@ -78,31 +78,31 @@ class TreeConverter implements ConverterInterface
      */
     public function convert(UnitInterface $unit, UnitInterface $other, $quantity)
     {
-        return $this->getTreeUnit($unit)->convert($other, $quantity);
+        return $this->getNode($unit)->convert($other, $quantity);
     }
 
     /**
-     * @var TreeUnit[]
+     * @var NodeUnit[]
      */
-    private $units;
+    private $nodes;
 
     /**
      * Returns tree unit by name or unit.
      * @param string|UnitInterface
-     * @return TreeUnit
+     * @return NodeUnit
      */
-    public function getTreeUnit($unit)
+    public function getNode($unit)
     {
         $name = $unit instanceof UnitInterface ? $unit->getName() : $unit;
 
-        if (!isset($this->units[$name])) {
-            $this->units[$name] = $this->findTreeUnit($name);
+        if (!isset($this->nodes[$name])) {
+            $this->nodes[$name] = $this->findNode($name);
         }
 
-        return $this->units[$name];
+        return $this->nodes[$name];
     }
 
-    private function findTreeUnit($name)
+    private function findNode($name)
     {
         $data = $this->findData($name);
 
@@ -124,6 +124,6 @@ class TreeConverter implements ConverterInterface
             throw new NotConvertibleException("no method for: $name");
         }
 
-        return new TreeUnit($this, $name, $this->getTreeUnit($parent), $method);
+        return new NodeUnit($this, $name, $this->getNode($parent), $method);
     }
 }

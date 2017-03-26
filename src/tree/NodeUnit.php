@@ -19,10 +19,10 @@ use Closure;
  *
  * @author Andrii Vasyliev <sol@hiqdev.com>
  */
-class TreeUnit extends RootUnit
+class NodeUnit extends RootUnit
 {
     /**
-     * @var null|TreeUnit null when root
+     * @var null|RootUnit null when root
      */
     protected $parent;
 
@@ -56,7 +56,7 @@ class TreeUnit extends RootUnit
     }
 
     /**
-     * @var TreeUnit
+     * @var RootUnit
      */
     public function getParent()
     {
@@ -86,7 +86,7 @@ class TreeUnit extends RootUnit
     }
 
     /**
-     * @var TreeUnit
+     * @var RootUnit
      */
     protected $root;
 

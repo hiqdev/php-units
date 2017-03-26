@@ -105,7 +105,7 @@ class RootUnit implements UnitInterface
      */
     public function convert(UnitInterface $other, $quantity)
     {
-        $other = $this->converter->getTreeUnit($other);
+        $other = $this->converter->getNode($other);
         if ($other->equals($this->getParent())) {
             return $this->mutliplyByFactor($quantity);
         }
