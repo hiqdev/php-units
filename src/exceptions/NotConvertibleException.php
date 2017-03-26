@@ -10,6 +10,8 @@
 
 namespace hiqdev\php\units\exceptions;
 
+use hiqdev\php\units\ExceptionInterface;
+
 /**
  * Thrown when cannot covert unit.
  *

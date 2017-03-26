@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2017, HiQDev (http://hiqdev.com/)
  */
 
-namespace hiqdev\php\units\exceptions;
+namespace hiqdev\php\units;
 
 /**
  * Common interface for all exceptions thrown by this library.
