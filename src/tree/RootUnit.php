@@ -10,7 +10,6 @@
 
 namespace hiqdev\php\units\tree;
 
-use Closure;
 use hiqdev\php\units\calculators\PhpCalculator;
 use hiqdev\php\units\UnitInterface;
 
@@ -59,11 +58,10 @@ class RootUnit implements UnitInterface
         $this->name = $name;
     }
 
-
     protected $calculator;
 
     /**
-     * Returns calculator for this unit. 
+     * Returns calculator for this unit.
      * Units can have different calculators.
      * @return CalculatorInterface
      */
@@ -85,7 +83,7 @@ class RootUnit implements UnitInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function assertConvertible(UnitInterface $other)
     {
@@ -136,5 +134,4 @@ class RootUnit implements UnitInterface
 
         return $this->getCalculator()->divide($quantity, $this->factor);
     }
-
 }

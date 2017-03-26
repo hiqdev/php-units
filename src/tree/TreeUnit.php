@@ -11,7 +11,6 @@
 namespace hiqdev\php\units\tree;
 
 use Closure;
-use hiqdev\php\units\UnitInterface;
 
 /**
  * Units organized as tree.
@@ -99,5 +98,4 @@ class TreeUnit extends RootUnit
 
         return $this->root;
     }
-
 }

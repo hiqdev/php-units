@@ -105,6 +105,6 @@ class Quantity implements QuantityInterface
 
     public function __callStatic($unit, $quantity)
     {
-        return new Quantity(Unit::$unit(), (float) $quantity);
+        return new self(Unit::$unit(), (float) $quantity);
     }
 }

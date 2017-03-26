@@ -31,7 +31,7 @@ interface UnitInterface
 
     /**
      * Checks whether this unit equals to other.
-     * Note aliases are equal, eg: kilobyte = KB
+     * Note aliases are equal, eg: kilobyte = KB.
      * @param UnitInterface $other
      * @return bool
      */

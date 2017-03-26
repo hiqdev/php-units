@@ -1,6 +1,6 @@
 <?php
 /**
- * PHP Billing Library
+ * PHP Units of Measure Library
  *
  * @link      https://github.com/hiqdev/php-units
  * @package   php-units
@@ -10,9 +10,8 @@
 
 namespace hiqdev\php\units\tree;
 
-use hiqdev\php\units\calculators\PhpCalculator;
-use hiqdev\php\units\exceptions\NotConvertibleException;
 use hiqdev\php\units\ConverterInterface;
+use hiqdev\php\units\exceptions\NotConvertibleException;
 use hiqdev\php\units\UnitInterface;
 
 /**
@@ -62,7 +61,7 @@ class TreeConverter implements ConverterInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function isConvertible(UnitInterface $unit, UnitInterface $other)
     {
@@ -75,7 +74,7 @@ class TreeConverter implements ConverterInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function convert(UnitInterface $unit, UnitInterface $other, $quantity)
     {
@@ -123,7 +122,6 @@ class TreeConverter implements ConverterInterface
 
         return $parent === ''
             ? new RootUnit($this, $name)
-            : new TreeUnit($this, $name, $this->getTreeUnit($parent), $method)
-        ;
+            : new TreeUnit($this, $name, $this->getTreeUnit($parent), $method);
     }
 }
