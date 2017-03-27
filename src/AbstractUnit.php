@@ -91,11 +91,17 @@ abstract class AbstractUnit implements UnitInterface
     final public static function __callStatic($name, $args)
     {
         if (!isset(static::$units[$name])) {
-            static::$units[$name] = new static($name, static::findConverter());
+            static::$units[$name] = new static($name, static::findConverter($name));
         }
 
         return static::$units[$name];
     }
 
-    abstract protected static function findConverter();
+    /**
+     * Returns converter for given unit name.
+     * The only function to change in child classes.
+     * @param string $name
+     * @return ConverterInterface
+     */
+    abstract protected static function findConverter($name);
 }

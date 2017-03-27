@@ -21,7 +21,11 @@ final class Unit extends AbstractUnit
 {
     private static $defaultConverter;
 
-    protected static function findConverter()
+    /**
+     * {@inheritdoc}
+     * Name is not used. Returns same converter for all units.
+     */
+    protected static function findConverter($name)
     {
         if (empty(static::$defaultConverter)) {
             static::$defaultConverter = static::findDefaultConverter();
