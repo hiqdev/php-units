@@ -100,8 +100,12 @@ abstract class AbstractUnit implements UnitInterface
     /**
      * Returns converter for given unit name.
      * The only function to change in child classes.
+     * XXX Should be defined as abstract but not supported in PHP5.
      * @param string $name
      * @return ConverterInterface
      */
-    abstract protected static function findConverter($name);
+    protected static function findConverter($name)
+    {
+        throw new InvalidConfigException('findConverter method must be redefined');
+    }
 }
