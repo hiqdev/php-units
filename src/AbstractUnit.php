@@ -1,6 +1,6 @@
 <?php
 /**
- * PHP Units of Measure Library
+ * PHP Units of Measure Library.
  *
  * @link      https://github.com/hiqdev/php-units
  * @package   php-units
@@ -11,7 +11,6 @@
 namespace hiqdev\php\units;
 
 use hiqdev\php\units\exceptions\InvalidConfigException;
-use hiqdev\php\units\tree\TreeConverter;
 
 /**
  * Abstract Unit of measure. E.g.
@@ -111,8 +110,8 @@ abstract class AbstractUnit implements UnitInterface
      * The only function to change in child classes.
      * XXX Should be defined as abstract but not supported in PHP5.
      * @param string $name
-     * @return ConverterInterface
      * @throws InvalidConfigException
+     * @return ConverterInterface
      */
     protected static function findConverter($name)
     {

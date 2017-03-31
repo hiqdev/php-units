@@ -1,6 +1,6 @@
 <?php
 /**
- * PHP Units of Measure Library
+ * PHP Units of Measure Library.
  *
  * @link      https://github.com/hiqdev/php-units
  * @package   php-units
@@ -28,7 +28,7 @@ abstract class AbstractQuantity implements QuantityInterface
     private $quantity;
 
     /**
-     * @var UnitInterface $unit
+     * @var UnitInterface
      * @var float|int|string $quantity
      */
     private function __construct(UnitInterface $unit, $quantity)
@@ -40,7 +40,7 @@ abstract class AbstractQuantity implements QuantityInterface
     /**
      * Creates quantity with same unit.
      * Optimized to return this if same quantity.
-     * @var float|int|string $quantity
+     * @var float|int|string
      */
     final protected function create($quantity)
     {
@@ -199,8 +199,8 @@ abstract class AbstractQuantity implements QuantityInterface
      * The only function to change in child classes.
      * XXX Should be defined as abstract but `abstract static` is not supported in PHP5.
      * @param string $name
-     * @return UnitInterface
      * @throws InvalidConfigException
+     * @return UnitInterface
      */
     protected static function findUnit($unit)
     {

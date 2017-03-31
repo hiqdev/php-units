@@ -1,6 +1,6 @@
 <?php
 /**
- * PHP Units of Measure Library
+ * PHP Units of Measure Library.
  *
  * @link      https://github.com/hiqdev/php-units
  * @package   php-units
@@ -37,7 +37,7 @@ interface QuantityInterface
     public function compare(QuantityInterface $other);
 
     /**
-     * Compare this quantity equals to other
+     * Compare this quantity equals to other.
      * @param QuantityInterface
      * @return bool
      */

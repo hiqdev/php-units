@@ -1,6 +1,6 @@
 <?php
 /**
- * PHP Units of Measure Library
+ * PHP Units of Measure Library.
  *
  * @link      https://github.com/hiqdev/php-units
  * @package   php-units
