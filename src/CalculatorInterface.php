@@ -64,7 +64,7 @@ interface CalculatorInterface
     /**
      * Divide amount with divisor.
      *
-     * @param int|float|string           $amount
+     * @param int|float|string $amount
      * @param int|float|string $divisor
      *
      * @return int|float|string
@@ -86,17 +86,17 @@ interface CalculatorInterface
     public function floor($number);
 
     /**
-     * Returns the absolute value of the number.
-     * @param int|float|string $number
-     * @return int|float|string
-     */
-    public function absolute($number);
-
-    /**
      * Round number, use rounding mode for tie-breaker.
      * @param string $number
      * @param int    $roundingMode
      * @return string
      */
     public function round($number, $roundingMode);
+
+    /**
+     * Returns the absolute value of the number.
+     * @param int|float|string $number
+     * @return int|float|string
+     */
+    public function absolute($number);
 }
