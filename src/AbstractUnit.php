@@ -10,6 +10,7 @@
 
 namespace hiqdev\php\units;
 
+use hiqdev\php\units\exceptions\InvalidConfigException;
 use hiqdev\php\units\tree\TreeConverter;
 
 /**
@@ -62,6 +63,14 @@ abstract class AbstractUnit implements UnitInterface
     /**
      * {@inheritdoc}
      */
+    final public function getCalculator()
+    {
+        return $this->getConverter()->getCalculator($this);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     final public function equals(UnitInterface $other)
     {
         return $this->getConverter()->equals($this, $other);
@@ -103,6 +112,7 @@ abstract class AbstractUnit implements UnitInterface
      * XXX Should be defined as abstract but not supported in PHP5.
      * @param string $name
      * @return ConverterInterface
+     * @throws InvalidConfigException
      */
     protected static function findConverter($name)
     {

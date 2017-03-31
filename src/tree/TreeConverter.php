@@ -61,6 +61,14 @@ class TreeConverter implements ConverterInterface
     /**
      * {@inheritdoc}
      */
+    public function getCalculator(UnitInterface $unit)
+    {
+        return $this->getNode($unit)->getCalculator();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function isConvertible(UnitInterface $unit, UnitInterface $other)
     {
         return $this->getNode($unit)->isConvertible($other);

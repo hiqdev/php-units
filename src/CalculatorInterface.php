@@ -38,7 +38,7 @@ interface CalculatorInterface
     public function compare($a, $b);
 
     /**
-     * Add added to amount.
+     * Add addend to amount.
      * @param int|float|string $amount
      * @param int|float|string $addend
      * @return int|float|string
@@ -63,10 +63,8 @@ interface CalculatorInterface
 
     /**
      * Divide amount with divisor.
-     *
      * @param int|float|string $amount
      * @param int|float|string $divisor
-     *
      * @return int|float|string
      */
     public function divide($amount, $divisor);

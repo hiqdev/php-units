@@ -38,6 +38,12 @@ interface UnitInterface
     public function getMeasure();
 
     /**
+     * Returns the calculator to use with this unit.
+     * @return CalculatorInterface
+     */
+    public function getCalculator();
+
+    /**
      * Checks whether this unit equals to other.
      * Note aliases are equal, eg: kilobyte = KB.
      * @param UnitInterface $other
