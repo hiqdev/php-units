@@ -92,6 +92,22 @@ abstract class AbstractQuantity implements QuantityInterface
     /**
      * {@inheritdoc}
      */
+    final public function isPositive()
+    {
+        return $this->quantity > 0;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    final public function isNegative()
+    {
+        return $this->quantity < 0;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     final public function isConvertible(UnitInterface $unit)
     {
         return $this->unit->isConvertible($unit);

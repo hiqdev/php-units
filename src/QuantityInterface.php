@@ -44,6 +44,18 @@ interface QuantityInterface
     public function equals(QuantityInterface $other);
 
     /**
+     * Returns if the quantity is more then zero.
+     * @return bool
+     */
+    public function isPositive();
+
+    /**
+     * Returns if the quantity is less then zero.
+     * @return bool
+     */
+    public function isNegative();
+
+    /**
      * Checks if this quantity is convertible to other unit.
      * @param UnitInterface $unit
      * @return QuantityInterface

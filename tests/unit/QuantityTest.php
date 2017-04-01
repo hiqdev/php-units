@@ -70,6 +70,18 @@ class QuantityTest extends \PHPUnit\Framework\TestCase
         $this->assertFalse($this->byte->equals(Quantity::bit(1)));
     }
 
+    public function testIsPositive()
+    {
+        $this->assertTrue($this->kilo->isPositive());
+        $this->assertFalse(Quantity::byte(-1)->isPositive());
+    }
+
+    public function testIsNegative()
+    {
+        $this->assertFalse($this->kilo->isNegative());
+        $this->assertTrue(Quantity::byte(-1)->isNegative());
+    }
+
     public function testIsConvertible()
     {
         $this->assertTrue($this->byte->isConvertible(Unit::KB()));
