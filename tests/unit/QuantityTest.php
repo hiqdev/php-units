@@ -94,4 +94,19 @@ class QuantityTest extends \PHPUnit\Framework\TestCase
         $this->assertSame(1000, $this->kilo->convert(Unit::byte())->getQuantity());
         $this->assertSame(1000000, $this->mega->convert(Unit::byte())->getQuantity());
     }
+
+    public function testAdd()
+    {
+        $this->assertSame(1001, $this->byte->add($this->kilo)->getQuantity());
+        $this->assertSame(1.001, $this->kilo->add($this->byte)->getQuantity());
+        $this->assertSame(1.000001, $this->mega->add($this->byte)->getQuantity());
+    }
+
+    public function testSubtract()
+    {
+        $this->assertSame(-999, $this->byte->subtract($this->kilo)->getQuantity());
+        $this->assertSame(0.999, $this->kilo->subtract($this->byte)->getQuantity());
+        $this->assertSame(0.999999, $this->mega->subtract($this->byte)->getQuantity());
+    }
+
 }
