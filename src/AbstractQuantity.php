@@ -76,9 +76,9 @@ abstract class AbstractQuantity implements QuantityInterface
      */
     final public function compare(QuantityInterface $other)
     {
-        $arg = $other->convert($this->unit);
+        $arg = $other->convert($this->unit)->getQuantity();
 
-        return $this->getCalculator()->compare($this->quantity, $arg->quantity);
+        return $this->getCalculator()->compare($this->quantity, $arg);
     }
 
     /**
@@ -128,7 +128,7 @@ abstract class AbstractQuantity implements QuantityInterface
      */
     final public function add(QuantityInterface $addend)
     {
-        $arg = $addend->convert($this->unit);
+        $arg = $addend->convert($this->unit)->getQuantity();
         $res = $this->getCalculator()->add($this->quantity, $arg);
 
         return $this->create($res);
@@ -139,7 +139,7 @@ abstract class AbstractQuantity implements QuantityInterface
      */
     final public function subtract(QuantityInterface $subtrahend)
     {
-        $arg = $subtrahend->convert($this->unit);
+        $arg = $subtrahend->convert($this->unit)->getQuantity();
         $res = $this->getCalculator()->subtract($this->quantity, $arg);
 
         return $this->create($res);
