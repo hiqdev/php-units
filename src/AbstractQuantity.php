@@ -42,9 +42,9 @@ abstract class AbstractQuantity implements QuantityInterface
      * Optimized to return this if same quantity.
      * @var float|int|string
      */
-    final protected function create($quantity)
+    final protected function repeat($quantity)
     {
-        return $this->quantity === $quantity ? $this : new static($this->unit, $quantity);
+        return $this->quantity === $quantity ? $this : static::create($this->unit, $quantity);
     }
 
     /**
@@ -120,7 +120,7 @@ abstract class AbstractQuantity implements QuantityInterface
     {
         $res = $this->unit->convert($unit, $this->quantity);
 
-        return $this->create($res);
+        return $this->repeat($res);
     }
 
     /**
@@ -131,7 +131,7 @@ abstract class AbstractQuantity implements QuantityInterface
         $arg = $addend->convert($this->unit)->getQuantity();
         $res = $this->getCalculator()->add($this->quantity, $arg);
 
-        return $this->create($res);
+        return $this->repeat($res);
     }
 
     /**
@@ -142,7 +142,7 @@ abstract class AbstractQuantity implements QuantityInterface
         $arg = $subtrahend->convert($this->unit)->getQuantity();
         $res = $this->getCalculator()->subtract($this->quantity, $arg);
 
-        return $this->create($res);
+        return $this->repeat($res);
     }
 
     /**
@@ -152,7 +152,7 @@ abstract class AbstractQuantity implements QuantityInterface
     {
         $res = $this->getCalculator()->multiply($this->quantity, $multiplier);
 
-        return $this->create($res);
+        return $this->repeat($res);
     }
 
     /**
@@ -162,7 +162,7 @@ abstract class AbstractQuantity implements QuantityInterface
     {
         $res = $this->getCalculator()->divide($this->quantity, $divisor);
 
-        return $this->create($res);
+        return $this->repeat($res);
     }
 
     /**
@@ -172,7 +172,7 @@ abstract class AbstractQuantity implements QuantityInterface
     {
         $res = $this->getCalculator()->ceil($this->quantity);
 
-        return $this->create($res);
+        return $this->repeat($res);
     }
 
     /**
@@ -182,7 +182,7 @@ abstract class AbstractQuantity implements QuantityInterface
     {
         $res = $this->getCalculator()->floor($this->quantity);
 
-        return $this->create($res);
+        return $this->repeat($res);
     }
 
     /**
@@ -192,7 +192,7 @@ abstract class AbstractQuantity implements QuantityInterface
     {
         $res = $this->getCalculator()->round($this->quantity, $roundingMode);
 
-        return $this->create($res);
+        return $this->repeat($res);
     }
 
     /**
@@ -202,12 +202,17 @@ abstract class AbstractQuantity implements QuantityInterface
     {
         $res = $this->getCalculator()->absolute($this->quantity);
 
-        return $this->create($res);
+        return $this->repeat($res);
     }
 
     final public static function __callStatic($unit, $args)
     {
-        return new static(static::findUnit($unit), $args[0]);
+        return static::create($unit, $args[0]);
+    }
+
+    public static function create($unit, $quantity)
+    {
+        return new static(static::findUnit($unit), $quantity);
     }
 
     /**
