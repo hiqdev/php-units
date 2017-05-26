@@ -19,6 +19,6 @@ final class Quantity extends AbstractQuantity
 {
     protected static function findUnit($unit)
     {
-        return Unit::$unit();
+        return $unit instanceof UnitInterface ? $unit : Unit::$unit();
     }
 }
