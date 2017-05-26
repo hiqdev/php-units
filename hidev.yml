@@ -13,7 +13,7 @@ package:
             - quantity with unit
         - conversion
 
-php-cs-fixer:
+.php_cs:
     finder:
         notPath:
             - res
