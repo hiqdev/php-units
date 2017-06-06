@@ -13,7 +13,7 @@ namespace hiqdev\php\units\yii2\console;
 use Symfony\Component\Yaml\Yaml;
 use Yii;
 
-class UnitsController extends \hidev\controllers\CommonController
+class UnitsController extends \yii\console\Controller
 {
     public function actionPrepare()
     {

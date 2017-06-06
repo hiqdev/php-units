@@ -9,11 +9,9 @@
  */
 
 return [
-    'components' => [
-        'config' => [
-            'units' => [
-                'class' => \hiqdev\php\units\yii2\console\UnitsController::class,
-            ],
+    'controllerMap' => [
+        'units' => [
+            'class' => \hiqdev\php\units\yii2\console\UnitsController::class,
         ],
     ],
 ];
