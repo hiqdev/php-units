@@ -15,7 +15,7 @@ namespace hiqdev\php\units;
  *
  * @author Andrii Vasyliev <sol@hiqdev.com>
  */
-abstract class AbstractQuantity implements QuantityInterface
+abstract class AbstractQuantity implements QuantityInterface, \JsonSerializable
 {
     /**
      * @var UnitInterface
@@ -227,4 +227,17 @@ abstract class AbstractQuantity implements QuantityInterface
     {
         throw new InvalidConfigException('getUnit method must be redefined');
     }
+
+    /**
+     * {@inheritdoc}
+     * @return array
+     */
+    public function jsonSerialize()
+    {
+        return [
+            'unit' => $this->unit->getName(),
+            'quantity' => $this->quantity,
+        ];
+    }
+
 }
