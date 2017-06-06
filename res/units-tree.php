@@ -106,6 +106,16 @@ return array (
     'parent' => 'byte',
     'factor' => '1208925819614629174706176',
   ),
+  'month' => 
+  array (
+    'parent' => '',
+    'factor' => 1,
+  ),
+  'year' => 
+  array (
+    'parent' => 'month',
+    'factor' => 12,
+  ),
   'length' => 
   array (
     'parent' => '',

@@ -24,6 +24,9 @@ bit:
         zebibyte:   1180591620717411303424
         yobibyte:   1208925819614629174706176
 
+month:
+    year:       12
+
 length:
     mm:
         milimeter:  1
