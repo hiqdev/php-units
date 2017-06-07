@@ -120,7 +120,7 @@ abstract class AbstractQuantity implements QuantityInterface, \JsonSerializable
     {
         $res = $this->unit->convert($unit, $this->quantity);
 
-        return $this->repeat($res);
+        return static::create($unit, $res);
     }
 
     /**

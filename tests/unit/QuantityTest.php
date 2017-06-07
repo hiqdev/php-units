@@ -93,6 +93,12 @@ class QuantityTest extends \PHPUnit\Framework\TestCase
         $this->assertSame(1, $this->byte->convert(Unit::byte())->getQuantity());
         $this->assertSame(1000, $this->kilo->convert(Unit::byte())->getQuantity());
         $this->assertSame(1000000, $this->mega->convert(Unit::byte())->getQuantity());
+        foreach ([$this->byte, $this->kilo, $this->mega] as $value) {
+            $this->assertTrue($value->convert(Unit::byte())->getUnit()->equals(Unit::byte()));
+        }
+        foreach ([Unit::byte(), Unit::kilobyte(), Unit::megabyte()] as $unit) {
+            $this->assertTrue($this->byte->convert($unit)->getUnit()->equals($unit));
+        }
     }
 
     public function testAdd()
