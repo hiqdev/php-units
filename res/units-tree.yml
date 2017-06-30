@@ -1,3 +1,9 @@
+item:
+    dozen:      12
+
+month:
+    year:       12
+
 bit:
     byte:
         byte:       8
@@ -23,9 +29,6 @@ bit:
         exbibyte:   1152921504606846976
         zebibyte:   1180591620717411303424
         yobibyte:   1208925819614629174706176
-
-month:
-    year:       12
 
 length:
     mm:
