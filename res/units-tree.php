@@ -6,6 +6,11 @@ return array (
     'parent' => '',
     'factor' => 1,
   ),
+  'items' => 
+  array (
+    'parent' => 'item',
+    'factor' => 1,
+  ),
   'dozen' => 
   array (
     'parent' => 'item',
