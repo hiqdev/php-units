@@ -98,6 +98,11 @@ abstract class AbstractUnit implements UnitInterface
 
     final public static function __callStatic($name, $args)
     {
+        return static::create($name);
+    }
+
+    public static function create($name)
+    {
         if (!isset(static::$units[$name])) {
             static::$units[$name] = new static($name, static::findConverter($name));
         }
