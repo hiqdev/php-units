@@ -17,27 +17,24 @@ use hiqdev\php\units\Unit;
  */
 class UnitTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @var Unit
-     */
-    protected $byte;
-
-    /**
-     * @var Unit
-     */
-    protected $kilo;
-
-    /**
-     * @var Unit
-     */
-    protected $mega;
-
     protected function setUp()
     {
         $this->bit  = Unit::bit();
         $this->byte = Unit::byte();
         $this->kilo = Unit::kilobyte();
         $this->mega = Unit::megabyte();
+        $this->giga = Unit::gigabyte();
+
+        $this->bps  = Unit::bps();
+        $this->kbps = Unit::kbps();
+        $this->mbps = Unit::mbps();
+        $this->gbps = Unit::gbps();
+
+        $this->minute = Unit::minute();
+        $this->min  = Unit::min();
+        $this->hour = Unit::hour();
+        $this->day  = Unit::day();
+        $this->week = Unit::week();
     }
 
     public function testSame()
@@ -67,13 +64,27 @@ class UnitTest extends \PHPUnit\Framework\TestCase
 
     public function testConvert()
     {
-        $this->assertSame(8, $this->byte->convert($this->bit, 1));
-        $this->assertSame(1, $this->bit->convert($this->byte, 8));
+        $this->assertConvert(1, $this->min, $this->minute);
+        $this->assertConvert(60, $this->min, $this->hour);
+        $this->assertConvert(24, $this->hour, $this->day);
+        $this->assertConvert(7, $this->day, $this->week);
 
-        $this->assertSame(1, $this->byte->convert($this->byte, 1));
-        $this->assertSame(1, $this->byte->convert($this->kilo, 1000));
-        $this->assertSame(1, $this->byte->convert($this->mega, 1000000));
-        $this->assertSame(1000, $this->kilo->convert($this->byte, 1));
-        $this->assertSame(1000000, $this->mega->convert($this->byte, 1));
+        $this->assertConvert(8, $this->bit, $this->byte);
+        $this->assertConvert(1000, $this->byte, $this->kilo);
+        $this->assertConvert(1000000, $this->byte, $this->mega);
+        $this->assertConvert(1000000000, $this->byte, $this->giga);
+
+        $this->assertConvert(1000, $this->bps, $this->kbps);
+        $this->assertConvert(1000000, $this->bps, $this->mbps);
+        $this->assertConvert(1000000000, $this->bps, $this->gbps);
+    }
+
+    protected function assertConvert($factor, $lesser, $bigger)
+    {
+        $this->assertSame(1, $lesser->convert($lesser, 1));
+        $this->assertSame(1, $bigger->convert($bigger, 1));
+
+        $this->assertSame(1, $lesser->convert($bigger, $factor));
+        $this->assertSame($factor, $bigger->convert($lesser, 1));
     }
 }

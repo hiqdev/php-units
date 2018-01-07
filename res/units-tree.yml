@@ -41,11 +41,14 @@ bit:
 
 bps:
     kbps:
-        Kbps: 1000
+        kbps: 1000
+        Kbps: 1
     mbps:
-        Mbps: 1000000
+        mbps: 1000000
+        Mbps: 1
     gbps:
-        Gbps: 1000000000
+        gbps: 1000000000
+        Gbps: 1
 
 length:
     mm:

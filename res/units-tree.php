@@ -164,32 +164,32 @@ return array (
   'kbps' => 
   array (
     'parent' => 'bps',
-    'factor' => 1,
+    'factor' => 1000,
   ),
   'Kbps' => 
   array (
     'parent' => 'kbps',
-    'factor' => 1000,
+    'factor' => 1,
   ),
   'mbps' => 
   array (
     'parent' => 'bps',
-    'factor' => 1,
+    'factor' => 1000000,
   ),
   'Mbps' => 
   array (
     'parent' => 'mbps',
-    'factor' => 1000000,
+    'factor' => 1,
   ),
   'gbps' => 
   array (
     'parent' => 'bps',
-    'factor' => 1,
+    'factor' => 1000000000,
   ),
   'Gbps' => 
   array (
     'parent' => 'gbps',
-    'factor' => 1000000000,
+    'factor' => 1,
   ),
   'length' => 
   array (
