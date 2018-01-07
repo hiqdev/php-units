@@ -26,6 +26,31 @@ return array (
     'parent' => 'month',
     'factor' => 12,
   ),
+  'minute' => 
+  array (
+    'parent' => '',
+    'factor' => 1,
+  ),
+  'min' => 
+  array (
+    'parent' => 'minute',
+    'factor' => 1,
+  ),
+  'hour' => 
+  array (
+    'parent' => 'min',
+    'factor' => 60,
+  ),
+  'day' => 
+  array (
+    'parent' => 'hour',
+    'factor' => 24,
+  ),
+  'week' => 
+  array (
+    'parent' => 'day',
+    'factor' => 7,
+  ),
   'bit' => 
   array (
     'parent' => '',
@@ -130,6 +155,41 @@ return array (
   array (
     'parent' => 'byte',
     'factor' => '1208925819614629174706176',
+  ),
+  'bps' => 
+  array (
+    'parent' => '',
+    'factor' => 1,
+  ),
+  'kbps' => 
+  array (
+    'parent' => 'bps',
+    'factor' => 1,
+  ),
+  'Kbps' => 
+  array (
+    'parent' => 'kbps',
+    'factor' => 1000,
+  ),
+  'mbps' => 
+  array (
+    'parent' => 'bps',
+    'factor' => 1,
+  ),
+  'Mbps' => 
+  array (
+    'parent' => 'mbps',
+    'factor' => 1000000,
+  ),
+  'gbps' => 
+  array (
+    'parent' => 'bps',
+    'factor' => 1,
+  ),
+  'Gbps' => 
+  array (
+    'parent' => 'gbps',
+    'factor' => 1000000000,
   ),
   'length' => 
   array (

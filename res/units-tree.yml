@@ -39,6 +39,14 @@ bit:
         zebibyte:   1180591620717411303424
         yobibyte:   1208925819614629174706176
 
+bps:
+    kbps:
+        Kbps: 1000
+    mbps:
+        Mbps: 1000000
+    gbps:
+        Gbps: 1000000000
+
 length:
     mm:
         milimeter:  1
