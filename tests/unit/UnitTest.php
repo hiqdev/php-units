@@ -34,6 +34,7 @@ class UnitTest extends \PHPUnit\Framework\TestCase
 
     protected function setUp()
     {
+        $this->bit  = Unit::bit();
         $this->byte = Unit::byte();
         $this->kilo = Unit::kilobyte();
         $this->mega = Unit::megabyte();
@@ -66,6 +67,9 @@ class UnitTest extends \PHPUnit\Framework\TestCase
 
     public function testConvert()
     {
+        $this->assertSame(8, $this->byte->convert($this->bit, 1));
+        $this->assertSame(1, $this->bit->convert($this->byte, 8));
+
         $this->assertSame(1, $this->byte->convert($this->byte, 1));
         $this->assertSame(1, $this->byte->convert($this->kilo, 1000));
         $this->assertSame(1, $this->byte->convert($this->mega, 1000000));
