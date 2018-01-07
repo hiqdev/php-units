@@ -5,6 +5,14 @@ item:
 month:
     year:       12
 
+minute:
+    min:
+        hour:
+            hour:   60
+            day:
+                day:    24
+                week:   7
+
 bit:
     byte:
         byte:       8
