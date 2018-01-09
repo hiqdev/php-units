@@ -1,11 +1,11 @@
 <?php
 /**
- * PHP Units of Measure Library.
+ * PHP Units of Measure Library
  *
  * @link      https://github.com/hiqdev/php-units
  * @package   php-units
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2017, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2017-2018, HiQDev (http://hiqdev.com/)
  */
 
 namespace hiqdev\php\units;
@@ -34,14 +34,14 @@ interface QuantityInterface
      * @param QuantityInterface
      * @return int
      */
-    public function compare(QuantityInterface $other);
+    public function compare(self $other);
 
     /**
      * Compare this quantity equals to other.
      * @param QuantityInterface
      * @return bool
      */
-    public function equals(QuantityInterface $other);
+    public function equals(self $other);
 
     /**
      * Returns if the quantity is more then zero.
@@ -74,14 +74,14 @@ interface QuantityInterface
      * @param QuantityInterface $addend
      * @return QuantityInterface
      */
-    public function add(QuantityInterface $addend);
+    public function add(self $addend);
 
     /**
      * Subtract subtrahend from this quantity.
      * @param QuantityInterface $subtrahend
      * @return QuantityInterface
      */
-    public function subtract(QuantityInterface $subtrahend);
+    public function subtract(self $subtrahend);
 
     /**
      * Multiply this quantity with multiplier.

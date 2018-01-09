@@ -1,11 +1,11 @@
 <?php
 /**
- * PHP Units of Measure Library.
+ * PHP Units of Measure Library
  *
  * @link      https://github.com/hiqdev/php-units
  * @package   php-units
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2017, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2017-2018, HiQDev (http://hiqdev.com/)
  */
 
 error_reporting(E_ALL & ~E_NOTICE);
@@ -19,5 +19,7 @@ require_once file_exists($bootstrap) ? $bootstrap : __DIR__ . '/../vendor/autolo
  */
 if (!class_exists(\PHPUnit\Framework\TestCase::class) && class_exists(\PHPUnit_Framework_TestCase::class)) {
     namespace \PHPUnit\Framework;
-    abstract class TestCase extends \PHPUnit_Framework_TestCase {};
+    abstract class TestCase extends \PHPUnit_Framework_TestCase
+    {
+    }
 }

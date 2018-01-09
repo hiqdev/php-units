@@ -1,11 +1,11 @@
 <?php
 /**
- * PHP Units of Measure Library.
+ * PHP Units of Measure Library
  *
  * @link      https://github.com/hiqdev/php-units
  * @package   php-units
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2017, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2017-2018, HiQDev (http://hiqdev.com/)
  */
 
 namespace hiqdev\php\units\tests;
@@ -114,5 +114,4 @@ class QuantityTest extends \PHPUnit\Framework\TestCase
         $this->assertSame(0.999, $this->kilo->subtract($this->byte)->getQuantity());
         $this->assertSame(0.999999, $this->mega->subtract($this->byte)->getQuantity());
     }
-
 }

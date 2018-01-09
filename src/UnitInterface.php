@@ -1,11 +1,11 @@
 <?php
 /**
- * PHP Units of Measure Library.
+ * PHP Units of Measure Library
  *
  * @link      https://github.com/hiqdev/php-units
  * @package   php-units
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2017, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2017-2018, HiQDev (http://hiqdev.com/)
  */
 
 namespace hiqdev\php\units;
@@ -49,14 +49,14 @@ interface UnitInterface
      * @param UnitInterface $other
      * @return bool
      */
-    public function equals(UnitInterface $other);
+    public function equals(self $other);
 
     /**
      * Checks whether this unit is convertible to other.
      * @param UnitInterface $other
      * @return bool
      */
-    public function isConvertible(UnitInterface $other);
+    public function isConvertible(self $other);
 
     /**
      * Converts to other unit quantity.
@@ -64,5 +64,5 @@ interface UnitInterface
      * @param int|float|string $amount raw amount
      * @return int|float|string quantity
      */
-    public function convert(UnitInterface $other, $quantity);
+    public function convert(self $other, $quantity);
 }

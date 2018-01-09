@@ -1,11 +1,11 @@
 <?php
 /**
- * PHP Units of Measure Library.
+ * PHP Units of Measure Library
  *
  * @link      https://github.com/hiqdev/php-units
  * @package   php-units
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2017, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2017-2018, HiQDev (http://hiqdev.com/)
  */
 
 namespace hiqdev\php\units;
@@ -239,5 +239,4 @@ abstract class AbstractQuantity implements QuantityInterface, \JsonSerializable
             'quantity' => $this->quantity,
         ];
     }
-
 }
