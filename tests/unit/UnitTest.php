@@ -24,6 +24,9 @@ class UnitTest extends \PHPUnit\Framework\TestCase
         $this->kilo = Unit::kilobyte();
         $this->mega = Unit::megabyte();
         $this->giga = Unit::gigabyte();
+        $this->kb   = Unit::kb();
+        $this->mb   = Unit::mb();
+        $this->gb   = Unit::gb();
 
         $this->bps  = Unit::bps();
         $this->kbps = Unit::kbps();
@@ -73,6 +76,10 @@ class UnitTest extends \PHPUnit\Framework\TestCase
         $this->assertConvert(1000, $this->byte, $this->kilo);
         $this->assertConvert(1000000, $this->byte, $this->mega);
         $this->assertConvert(1000000000, $this->byte, $this->giga);
+
+        $this->assertConvert(1000, $this->byte, $this->kb);
+        $this->assertConvert(1000000, $this->byte, $this->mb);
+        $this->assertConvert(1000000000, $this->byte, $this->gb);
 
         $this->assertConvert(1000, $this->bps, $this->kbps);
         $this->assertConvert(1000000, $this->bps, $this->mbps);
