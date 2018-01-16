@@ -61,6 +61,26 @@ return array (
     'parent' => 'bit',
     'factor' => 8,
   ),
+  'kb' => 
+  array (
+    'parent' => 'byte',
+    'factor' => 1000,
+  ),
+  'mb' => 
+  array (
+    'parent' => 'byte',
+    'factor' => 1000000,
+  ),
+  'gb' => 
+  array (
+    'parent' => 'byte',
+    'factor' => 1000000000,
+  ),
+  'tb' => 
+  array (
+    'parent' => 'byte',
+    'factor' => 1000000000000,
+  ),
   'kilobyte' => 
   array (
     'parent' => 'byte',
