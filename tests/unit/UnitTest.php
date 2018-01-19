@@ -86,7 +86,7 @@ class UnitTest extends \PHPUnit\Framework\TestCase
         $this->assertConvert(1000000000, $this->bps, $this->gbps);
     }
 
-    protected function assertConvert($factor, $lesser, $bigger)
+    protected function assertConvert($factor, Unit $lesser, Unit $bigger)
     {
         $this->assertSame(1, $lesser->convert($lesser, 1));
         $this->assertSame(1, $bigger->convert($bigger, 1));

@@ -74,6 +74,9 @@ class TreeConverter implements ConverterInterface
         return $this->getNode($unit)->isConvertible($other);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getMeasure(UnitInterface $unit)
     {
         return $this->getNode($unit)->getMeasure();

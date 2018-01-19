@@ -41,4 +41,12 @@ interface ConverterInterface
      * @return int|float|string $quantity in other units
      */
     public function convert(UnitInterface $unit, UnitInterface $other, $quantity);
+
+    /**
+     * Returns measure name for $unit
+     *
+     * @param UnitInterface $unit
+     * @return string
+     */
+    public function getMeasure(UnitInterface $unit);
 }
