@@ -43,7 +43,7 @@ interface ConverterInterface
     public function convert(UnitInterface $unit, UnitInterface $other, $quantity);
 
     /**
-     * Returns measure name for $unit
+     * Returns measure name for $unit.
      *
      * @param UnitInterface $unit
      * @return string
