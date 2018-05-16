@@ -16,6 +16,16 @@ return array (
     'parent' => 'item',
     'factor' => 12,
   ),
+  'unit' => 
+  array (
+    'parent' => '',
+    'factor' => 1,
+  ),
+  'units' => 
+  array (
+    'parent' => 'unit',
+    'factor' => 1,
+  ),
   'month' => 
   array (
     'parent' => '',
