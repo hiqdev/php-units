@@ -10,6 +10,8 @@
 
 namespace hiqdev\php\units;
 
+use yii\base\InvalidConfigException;
+
 /**
  * Quantity with Unit.
  *
@@ -210,6 +212,11 @@ abstract class AbstractQuantity implements QuantityInterface, \JsonSerializable
         return static::create($unit, $args[0]);
     }
 
+    /**
+     * @param string $unit
+     * @var float|int|string $quantity
+     * @return static
+     */
     public static function create($unit, $quantity)
     {
         return new static(static::findUnit($unit), $quantity);
@@ -220,7 +227,6 @@ abstract class AbstractQuantity implements QuantityInterface, \JsonSerializable
      * The only function to change in child classes.
      * XXX Should be defined as abstract but `abstract static` is not supported in PHP5.
      * @param string $name
-     * @throws InvalidConfigException
      * @return UnitInterface
      */
     protected static function findUnit($unit)
