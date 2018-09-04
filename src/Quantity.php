@@ -10,6 +10,8 @@
 
 namespace hiqdev\php\units;
 
+use hiqdev\php\units\exceptions\InvalidArgumentException;
+
 /**
  * Quantity with Unit.
  *
@@ -19,6 +21,13 @@ final class Quantity extends AbstractQuantity
 {
     protected static function findUnit($unit)
     {
-        return $unit instanceof UnitInterface ? $unit : Unit::$unit();
+        if ($unit instanceof UnitInterface) {
+            return $unit;
+        }
+        if (!is_string($unit)) {
+            throw new InvalidArgumentException('uncompatible unit name: ' . var_export($my_var, true));
+        }
+
+        return Unit::$unit();
     }
 }
