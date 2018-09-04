@@ -11,6 +11,7 @@
 namespace hiqdev\php\units\tree;
 
 use hiqdev\php\units\calculators\PhpCalculator;
+use hiqdev\php\units\exceptions\InvalidArgumentException;
 use hiqdev\php\units\exceptions\NotConvertibleException;
 use hiqdev\php\units\UnitInterface;
 
