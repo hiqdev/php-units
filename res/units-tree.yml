@@ -19,6 +19,7 @@ minute:
 bit:
     byte:
         byte:       8
+        bytes:      1
         kb:         1000
         mb:         1000000
         gb:         1000000000

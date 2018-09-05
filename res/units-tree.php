@@ -71,6 +71,11 @@ return array (
     'parent' => 'bit',
     'factor' => 8,
   ),
+  'bytes' => 
+  array (
+    'parent' => 'byte',
+    'factor' => 1,
+  ),
   'kb' => 
   array (
     'parent' => 'byte',
