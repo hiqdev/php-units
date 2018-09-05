@@ -191,6 +191,11 @@ return array (
     'parent' => '',
     'factor' => 1,
   ),
+  'bitps' => 
+  array (
+    'parent' => 'bps',
+    'factor' => 1,
+  ),
   'kbps' => 
   array (
     'parent' => 'bps',

@@ -47,6 +47,7 @@ bit:
         yobibyte:   1208925819614629174706176
 
 bps:
+    bitps:  1
     kbps:
         kbps:   1000
         Kbps:   1
