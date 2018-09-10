@@ -56,6 +56,11 @@ return array (
     'parent' => 'hour',
     'factor' => 24,
   ),
+  'days' => 
+  array (
+    'parent' => 'day',
+    'factor' => 1,
+  ),
   'week' => 
   array (
     'parent' => 'day',

@@ -13,6 +13,7 @@ minute:
         hour:
             hour:   60
             day:
+                days:   1
                 day:    24
                 week:   7
 
