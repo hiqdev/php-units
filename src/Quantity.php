@@ -25,7 +25,7 @@ final class Quantity extends AbstractQuantity
             return $unit;
         }
         if (!is_string($unit)) {
-            throw new InvalidArgumentException('uncompatible unit name: ' . var_export($my_var, true));
+            throw new InvalidArgumentException('uncompatible unit name: ' . var_export($unit, true));
         }
 
         return Unit::$unit();
