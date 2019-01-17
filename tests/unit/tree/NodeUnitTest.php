@@ -49,7 +49,7 @@ class UnitTest extends \PHPUnit\Framework\TestCase
     {
         $KB = $this->tree->getNode('KB');
         $MB = $this->tree->getNode('MB');
-        $this->assertSame($this->kilo, $KB->getCanon());
-        $this->assertSame($this->mega, $MB->getCanon());
+        $this->assertTrue($KB->getCanon()->equals($this->kilo));
+        $this->assertTrue($MB->getCanon()->equals($this->mega));
     }
 }
