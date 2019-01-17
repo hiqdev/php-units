@@ -1,5 +1,50 @@
 # hiqdev/php-units
 
+## [1.0.0] - 2019-01-17
+
+- Implemented units conversion through root unit
+    - [194c0f8] 2019-01-17 Implemented units conversion through root unit [@SilverFire]
+- Added more supported units: minute, hour, day, week, month, year, bps, kbps, mbps, gbps, kb, mb, gb, item
+    - [236fa5d] 2018-05-16 added `unit` unit [@hiqsol]
+    - [15fe250] 2018-01-16 added tests from `kb`, `mb`, `gb` [@hiqsol]
+    - [f65299a] 2018-01-16 added `kb`, `mb`, `gb` units [@hiqsol]
+    - [d099f54] 2018-01-07 improved `testConvert`, added tests for k/m/gbps and min/hour/day/week [@hiqsol]
+    - [577318b] 2018-01-07 added bps, kbps, mbps, gbps units to tree [@hiqsol]
+    - [7460142] 2018-01-07 added minute, hour, day, week units to tree [@hiqsol]
+    - [719ee78] 2017-09-08 added `items` unit [@hiqsol]
+    - [17264a4] 2017-06-06 added month/year units [@hiqsol]
+    - [e4042e1] 2017-06-30 added `item` unit [@hiqsol]
+- `AbstractQuantity` implements `JsonSerializable` interface now
+    - [6482c33] 2017-06-06 added JsonSerializable to AbstractQuantity [@hiqsol]
+- Added `Quantity::isPositive()`, `isNegative()` methods
+    - [128ce60] 2017-04-01 added quantity isPositive/Negative functions with tests [@hiqsol]
+- Other minor enhancements and fixes
+    - [4b2ce17] 2018-12-22 Fixed typo [@SilverFire]
+    - [3c053e1] 2018-09-10 Added `days` unit alias to day [@hiqsol]
+    - [7c25118] 2018-09-05 Added `bytes` alias for `byte` [@hiqsol]
+    - [19a4673] 2018-09-05 Added `bitps` alias to `bps` [@hiqsol]
+    - [a53591e] 2018-09-05 csfixed [@hiqsol]
+    - [5eb4368] 2018-09-04 Added check for uncompatible unit name in `Quantity::findUnit()` [@hiqsol]
+    - [be37089] 2018-09-04 Added `InvalidArgumentException` [@hiqsol]
+    - [0143b56] 2018-08-14 Added formatting capabilities [@SilverFire]
+    - [92b395f] 2018-05-18 Enhanced PHPDocs [@SilverFire]
+    - [f7140b9] 2018-01-19 Added ConverterInterface::getMeasure() [@SilverFire]
+    - [6f18338] 2018-01-09 csfixed [@hiqsol]
+    - [37a134d] 2017-07-14 opened autoloading for res and yii2 [@hiqsol]
+    - [08c059d] 2017-09-08 added `AbstractUnit::create` method [@hiqsol]
+    - [53bc11e] 2017-06-07 fixed AbstractQuantity::convert to return proper unit [@hiqsol]
+    - [64278a0] 2017-06-06 fixed units controller [@hiqsol]
+    - [2ec02e6] 2017-05-26 csfixed [@hiqsol]
+    - [903a5ed] 2017-05-26 improved Quantity::findUnit to work when ready unit given [@hiqsol]
+    - [9d6ccca] 2017-04-03 fixed add and subtract with missed getQuantity [@hiqsol]
+    - [a3136e4] 2017-05-26 added `AbstractQuantity::create`, renamed repeat <- create [@hiqsol]
+    - [6790725] 2017-05-26 csfixed [@hiqsol]
+    - [be9a071] 2017-05-26 renamed `hidev.yml` [@hiqsol]
+- Enhanced tests coverage
+    - [d3939a2] 2018-01-07 added tests for byte <-> bit conversion [@hiqsol]
+    - [1aa3bc6] 2017-04-03 added tests for add/subtract Quantity [@hiqsol]
+    - [dfc97fb] 2017-04-03 added compatibility with PHPUnit 5.x [@hiqsol]
+
 ## [0.1.0] - 2017-03-31
 
 - Added `Quantity` implementation and tests
@@ -71,5 +116,42 @@
 [275d75e]: https://github.com/hiqdev/php-units/commit/275d75e
 [f928eb8]: https://github.com/hiqdev/php-units/commit/f928eb8
 [25bbe52]: https://github.com/hiqdev/php-units/commit/25bbe52
-[Under development]: https://github.com/hiqdev/php-units/releases
+[Under development]: https://github.com/hiqdev/php-units/compare/0.1.0...HEAD
 [0.1.0]: https://github.com/hiqdev/php-units/releases/tag/0.1.0
+[194c0f8]: https://github.com/hiqdev/php-units/commit/194c0f8
+[4b2ce17]: https://github.com/hiqdev/php-units/commit/4b2ce17
+[3c053e1]: https://github.com/hiqdev/php-units/commit/3c053e1
+[7c25118]: https://github.com/hiqdev/php-units/commit/7c25118
+[19a4673]: https://github.com/hiqdev/php-units/commit/19a4673
+[a53591e]: https://github.com/hiqdev/php-units/commit/a53591e
+[5eb4368]: https://github.com/hiqdev/php-units/commit/5eb4368
+[be37089]: https://github.com/hiqdev/php-units/commit/be37089
+[0143b56]: https://github.com/hiqdev/php-units/commit/0143b56
+[92b395f]: https://github.com/hiqdev/php-units/commit/92b395f
+[236fa5d]: https://github.com/hiqdev/php-units/commit/236fa5d
+[f7140b9]: https://github.com/hiqdev/php-units/commit/f7140b9
+[15fe250]: https://github.com/hiqdev/php-units/commit/15fe250
+[f65299a]: https://github.com/hiqdev/php-units/commit/f65299a
+[6f18338]: https://github.com/hiqdev/php-units/commit/6f18338
+[d099f54]: https://github.com/hiqdev/php-units/commit/d099f54
+[577318b]: https://github.com/hiqdev/php-units/commit/577318b
+[7460142]: https://github.com/hiqdev/php-units/commit/7460142
+[d3939a2]: https://github.com/hiqdev/php-units/commit/d3939a2
+[719ee78]: https://github.com/hiqdev/php-units/commit/719ee78
+[08c059d]: https://github.com/hiqdev/php-units/commit/08c059d
+[37a134d]: https://github.com/hiqdev/php-units/commit/37a134d
+[e4042e1]: https://github.com/hiqdev/php-units/commit/e4042e1
+[53bc11e]: https://github.com/hiqdev/php-units/commit/53bc11e
+[64278a0]: https://github.com/hiqdev/php-units/commit/64278a0
+[17264a4]: https://github.com/hiqdev/php-units/commit/17264a4
+[6482c33]: https://github.com/hiqdev/php-units/commit/6482c33
+[2ec02e6]: https://github.com/hiqdev/php-units/commit/2ec02e6
+[903a5ed]: https://github.com/hiqdev/php-units/commit/903a5ed
+[a3136e4]: https://github.com/hiqdev/php-units/commit/a3136e4
+[6790725]: https://github.com/hiqdev/php-units/commit/6790725
+[be9a071]: https://github.com/hiqdev/php-units/commit/be9a071
+[1aa3bc6]: https://github.com/hiqdev/php-units/commit/1aa3bc6
+[dfc97fb]: https://github.com/hiqdev/php-units/commit/dfc97fb
+[9d6ccca]: https://github.com/hiqdev/php-units/commit/9d6ccca
+[128ce60]: https://github.com/hiqdev/php-units/commit/128ce60
+[1.0.0]: https://github.com/hiqdev/php-units/compare/0.1.0...1.0.0
