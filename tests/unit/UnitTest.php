@@ -94,4 +94,10 @@ class UnitTest extends \PHPUnit\Framework\TestCase
         $this->assertSame(1, $lesser->convert($bigger, $factor));
         $this->assertSame($factor, $bigger->convert($lesser, 1));
     }
+
+    public function testConvertThroughRoot()
+    {
+        $this->assertConvert(1440, $this->minute, $this->day);
+        $this->assertConvert(1000, $this->mb, $this->gb);
+    }
 }

@@ -59,9 +59,10 @@ interface UnitInterface
     public function isConvertible(self $other);
 
     /**
-     * Converts to other unit quantity.
-     * @param UnitInterface $other
-     * @param int|float|string $amount raw amount
+     * Converts $quantity in current unit to $other unit
+     *
+     * @param self $other
+     * @param int|float|string $quantity raw amount in current unit
      * @return int|float|string quantity
      */
     public function convert(self $other, $quantity);

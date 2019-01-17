@@ -10,6 +10,7 @@
 
 namespace hiqdev\php\units\tree;
 
+use hiqdev\php\units\CalculatorInterface;
 use hiqdev\php\units\calculators\PhpCalculator;
 use hiqdev\php\units\exceptions\InvalidArgumentException;
 use hiqdev\php\units\exceptions\NotConvertibleException;
@@ -40,11 +41,13 @@ class RootUnit implements UnitInterface
         return $this->name;
     }
 
+    /** @return UnitInterface */
     public function getParent()
     {
         return $this;
     }
 
+    /** @return UnitInterface */
     public function getRoot()
     {
         return $this;
@@ -98,7 +101,12 @@ class RootUnit implements UnitInterface
     {
         $node = $this->getNode($other);
 
-        return $this === $node->getCanon() || $node === $this->getCanon();
+        return $this === $node->getCanon()
+            || $node === $this->getCanon()
+            || (
+                $this->getRoot() === $this->getNode($other)->getRoot()
+                && $this->getFactor() === $this->getNode($other)->getFactor()
+            );
     }
 
     public function getCanon()
@@ -129,6 +137,8 @@ class RootUnit implements UnitInterface
      */
     public function convert(UnitInterface $other, $quantity)
     {
+        $this->assertConvertible($other);
+
         $other = $this->getNode($other);
 
         if ($this->equals($other)) {
@@ -143,7 +153,7 @@ class RootUnit implements UnitInterface
             return $other->divideByFactor($quantity);
         }
 
-        throw new NotConvertibleException('not yet implemented: ' . $this->getName() . ' -> ' . $other->getName());
+        return $this->getRoot()->convert($other, $this->convert($this->getRoot(), $quantity));
     }
 
     public function multiplyByFactor($quantity)

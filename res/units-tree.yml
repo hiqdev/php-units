@@ -9,72 +9,59 @@ month:
     year:       12
 
 minute:
-    min:
-        hour:
-            hour:   60
-            day:
-                days:   1
-                day:    24
-                week:   7
+    min:        1
+    hour:       60
+    day:        1440
+    days:       1440
+    week:       10080
 
 bit:
-    byte:
-        byte:       8
-        bytes:      1
-        kb:         1000
-        mb:         1000000
-        gb:         1000000000
-        tb:         1000000000000
-        kilobyte:
-            kilobyte:   1000
-            KB:         1
-        megabyte:
-            megabyte:   1000000
-            MB:         1
-        gigabyte:
-            gigabyte:   1000000000
-            GB:         1
-        terabyte:   1000000000000
-        petabyte:   1000000000000000
-        exabyte:    1000000000000000000
-        zettabyte:  1000000000000000000000
-        yottabyte:  1000000000000000000000000
-        kibibyte:   1024
-        mebibyte:   1048576
-        gibibyte:   1073741824
-        tebibyte:   1099511627776
-        pebibyte:   1125899906842624
-        exbibyte:   1152921504606846976
-        zebibyte:   1180591620717411303424
-        yobibyte:   1208925819614629174706176
+    byte:       8
+    bytes:      8
+    kb:         8000
+    mb:         8000000
+    gb:         8000000000
+    tb:         8000000000000
+    kilobyte:   8000
+    KB:         8000
+    megabyte:   8000000
+    MB:         8000000
+    gigabyte:   8000000000
+    GB:         8000000000
+    terabyte:   8000000000000
+    petabyte:   8000000000000000
+    exabyte:    8000000000000000000
+    zettabyte:  8000000000000000000000
+    yottabyte:  8000000000000000000000000
+    kibibyte:   8192
+    mebibyte:   8388608
+    gibibyte:   8589934592
+    tebibyte:   8796093022208
+    pebibyte:   9007199254740992
+    exbibyte:   9223372036854775808
+    zebibyte:   9444732965739290427392
+    yobibyte:   9671406556917033397649408
 
 bps:
     bitps:  1
-    kbps:
-        kbps:   1000
-        Kbps:   1
-    mbps:
-        mbps:   1000000
-        Mbps:   1
-    gbps:
-        gbps:   1000000000
-        Gbps:   1
+    kbps:   1000
+    Kbps:   1000
+    mbps:   1000000
+    Mbps:   1000000
+    gbps:   1000000000
+    Gbps:   1000000000
 
 length:
-    mm:
-        milimeter:  1
-        cm:
-            cm:         10
-            centimeter: 1
-        m:
-            m:      1000
-            metre:  1
-            meter:  1
-            km:
-                km:         1000
-                kilometre:  1
-                kilometer:  1
-    inch:
-        inch:       254
-        foot:       12
-        yard:       36
+    mm:         1
+    milimeter:  1
+    cm:         10
+    centimeter: 10
+    m:          1000
+    metre:      1000
+    meter:      1000
+    km:         1000
+    kilometre:  1000
+    kilometer:  1000
+    inch:       254
+    foot:       3048
+    yard:       9144
