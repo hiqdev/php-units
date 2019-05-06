@@ -43,7 +43,21 @@ class IntlFormatter implements FormatterInterface
         // TODO: split to different classes
         switch ($quantity->getUnit()->getMeasure()) {
             case 'bit':
-                return $format->asShortSize($quantity->convert(Unit::create('byte'))->getQuantity(), 2);
+                return Yii::t('hiqdev.units', '{quantity, number} {unit}', [
+                    'quantity' => $quantity->getQuantity(),
+                    'unit' => (function (string $unitName) {
+                        switch ($unitName) {
+                            case 'b': return Yii::t('hiqdev.units', 'B');
+                            case 'kb': return Yii::t('hiqdev.units', 'kB');
+                            case 'mb': return Yii::t('hiqdev.units', 'MB');
+                            case 'gb': return Yii::t('hiqdev.units', 'GB');
+                            case 'tb': return Yii::t('hiqdev.units', 'TB');
+                            case 'pb': return Yii::t('hiqdev.units', 'PB');
+                        }
+
+                        return Yii::t('hiqdev.units', '');
+                    })($quantity->getUnit()->getName())
+                ]);
             case 'bps':
                 return Yii::t('hiqdev.units', '{quantity, number} {unit}', [
                     'quantity' => $quantity->getQuantity(),
