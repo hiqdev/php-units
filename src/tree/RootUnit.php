@@ -120,7 +120,7 @@ class RootUnit implements UnitInterface
     public function assertConvertible(UnitInterface $other)
     {
         if (!$this->isConvertible($other)) {
-            throw new InvalidArgumentException('not convertible unit: ' . $other->getName());
+            throw new InvalidArgumentException('not convertible unit: from ' . $this->getName() . ' to ' . $other->getName());
         }
     }
 
