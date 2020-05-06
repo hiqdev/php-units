@@ -100,4 +100,10 @@ class UnitTest extends \PHPUnit\Framework\TestCase
         $this->assertConvert(1440, $this->minute, $this->day);
         $this->assertConvert(1000, $this->mb, $this->gb);
     }
+
+    public function testUnknownUnit()
+    {
+        $unknown = Unit::create('unknown');
+        $this->assertInstanceOf(Unit::class, $unknown);
+    }
 }
