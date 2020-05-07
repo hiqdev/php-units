@@ -11,18 +11,18 @@
 namespace hiqdev\php\units\yii2\console;
 
 use Symfony\Component\Yaml\Yaml;
-use Yii;
 
 class UnitsController extends \yii\console\Controller
 {
     public function actionPrepare()
     {
-        $src  = Yii::getAlias('@hiqdev/php/units/res/units-tree.yml');
+        $dir  = dirname(__DIR__, 2);
+        $src  = "$dir/res/units-tree.yml";
         $tree = Yaml::parse(file_get_contents($src));
         $this->prepareUnits('', $tree);
         $dump = var_export($this->units, true);
 
-        $dst = Yii::getAlias('@hiqdev/php/units/res/units-tree.php');
+        $dst = "$dir/res/units-tree.php";
         $old = file_get_contents($dst);
         $new = "<?php\n\nreturn $dump;\n";
         if ($old !== $new) {

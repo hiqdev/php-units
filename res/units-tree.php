@@ -81,27 +81,12 @@ return array (
     'parent' => 'bit',
     'factor' => 8,
   ),
-  'kb' => 
+  'kilobyte' => 
   array (
     'parent' => 'bit',
     'factor' => 8000,
   ),
-  'mb' => 
-  array (
-    'parent' => 'bit',
-    'factor' => 8000000,
-  ),
-  'gb' => 
-  array (
-    'parent' => 'bit',
-    'factor' => 8000000000,
-  ),
-  'tb' => 
-  array (
-    'parent' => 'bit',
-    'factor' => 8000000000000,
-  ),
-  'kilobyte' => 
+  'kb' => 
   array (
     'parent' => 'bit',
     'factor' => 8000,
@@ -116,6 +101,11 @@ return array (
     'parent' => 'bit',
     'factor' => 8000000,
   ),
+  'mb' => 
+  array (
+    'parent' => 'bit',
+    'factor' => 8000000,
+  ),
   'MB' => 
   array (
     'parent' => 'bit',
@@ -126,12 +116,27 @@ return array (
     'parent' => 'bit',
     'factor' => 8000000000,
   ),
+  'gb' => 
+  array (
+    'parent' => 'bit',
+    'factor' => 8000000000,
+  ),
   'GB' => 
   array (
     'parent' => 'bit',
     'factor' => 8000000000,
   ),
   'terabyte' => 
+  array (
+    'parent' => 'bit',
+    'factor' => 8000000000000,
+  ),
+  'tb' => 
+  array (
+    'parent' => 'bit',
+    'factor' => 8000000000000,
+  ),
+  'TB' => 
   array (
     'parent' => 'bit',
     'factor' => 8000000000000,
@@ -232,6 +237,16 @@ return array (
     'factor' => 1000000000,
   ),
   'Gbps' => 
+  array (
+    'parent' => 'bps',
+    'factor' => 1000000000,
+  ),
+  'tbps' => 
+  array (
+    'parent' => 'bps',
+    'factor' => 1000000000,
+  ),
+  'Tbps' => 
   array (
     'parent' => 'bps',
     'factor' => 1000000000,
