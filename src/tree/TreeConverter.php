@@ -47,7 +47,7 @@ class TreeConverter implements ConverterInterface
     private function findData($name)
     {
         if (!isset($this->data[$name])) {
-            throw new NotConvertibleException('no data for: ' . $name);
+            throw new NotConvertibleException("not convertible: '$name'");
         }
 
         return $this->data[$name];
