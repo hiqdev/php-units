@@ -10,6 +10,7 @@
 
 namespace hiqdev\php\units;
 
+use JsonSerializable;
 use hiqdev\php\units\exceptions\InvalidConfigException;
 
 /**
@@ -20,7 +21,7 @@ use hiqdev\php\units\exceptions\InvalidConfigException;
  * @see UnitInterface
  * @author Andrii Vasyliev <sol@hiqdev.com>
  */
-abstract class AbstractUnit implements UnitInterface
+abstract class AbstractUnit implements UnitInterface, JsonSerializable
 {
     /**
      * @var string
@@ -121,5 +122,10 @@ abstract class AbstractUnit implements UnitInterface
     protected static function findConverter($name)
     {
         throw new InvalidConfigException('findConverter method must be redefined');
+    }
+
+    public function jsonSerialize()
+    {
+        return ['name' => $this->name];
     }
 }
