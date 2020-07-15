@@ -38,11 +38,16 @@ class UnitTest extends \PHPUnit\Framework\TestCase
         $this->hour = Unit::hour();
         $this->day  = Unit::day();
         $this->week = Unit::week();
+
+        $this->usd  = Unit::usd();
+        $this->eur  = Unit::eur();
     }
 
     public function testSame()
     {
         $this->assertSame($this->byte, Unit::byte());
+        $this->assertSame($this->usd, Unit::usd());
+        $this->assertSame($this->eur, Unit::eur());
     }
 
     public function testEquals()
