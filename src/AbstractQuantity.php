@@ -10,6 +10,7 @@
 
 namespace hiqdev\php\units;
 
+use ReturnTypeWillChange;
 use yii\base\InvalidConfigException;
 
 /**
@@ -238,6 +239,7 @@ abstract class AbstractQuantity implements QuantityInterface, \JsonSerializable
      * {@inheritdoc}
      * @return array
      */
+    #[ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return [

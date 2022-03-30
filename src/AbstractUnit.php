@@ -12,6 +12,7 @@ namespace hiqdev\php\units;
 
 use JsonSerializable;
 use hiqdev\php\units\exceptions\InvalidConfigException;
+use ReturnTypeWillChange;
 
 /**
  * Abstract Unit of measure. E.g.
@@ -124,6 +125,7 @@ abstract class AbstractUnit implements UnitInterface, JsonSerializable
         throw new InvalidConfigException('findConverter method must be redefined');
     }
 
+    #[ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return ['name' => $this->name];
