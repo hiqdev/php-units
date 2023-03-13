@@ -68,3 +68,9 @@ length:
     inch:       254
     foot:       3048
     yard:       9144
+
+power:
+    w:  1
+    W:  1
+    kw: 1000
+    kW: 1000

@@ -321,4 +321,29 @@ return array (
     'parent' => 'length',
     'factor' => 9144,
   ),
+  'power' =>
+  array (
+    'parent' => '',
+    'factor' => 1,
+  ),
+  'w' =>
+  array (
+    'parent' => 'power',
+    'factor' => 1,
+  ),
+  'W' =>
+  array (
+    'parent' => 'power',
+    'factor' => 1,
+  ),
+  'kw' =>
+  array (
+    'parent' => 'power',
+    'factor' => 1000,
+  ),
+  'kW' =>
+  array (
+    'parent' => 'power',
+    'factor' => 1000,
+  ),
 );
