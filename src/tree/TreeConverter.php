@@ -44,6 +44,11 @@ class TreeConverter implements ConverterInterface
         $this->data = require $path;
     }
 
+    public function __debugInfo()
+    {
+        return [];
+    }
+
     private function findData($name)
     {
         if (!isset($this->data[$name])) {
