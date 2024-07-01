@@ -31,6 +31,10 @@ interface QuantityInterface
 
     /**
      * Compare this quantity to other.
+     * Returns:
+     * - -1 if this < other
+     * -  0 if this = other
+     * -  1 if this > other
      * @param QuantityInterface
      * @return int
      */
