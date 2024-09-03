@@ -36,7 +36,7 @@ class QuantityTest extends \PHPUnit\Framework\TestCase
      */
     protected $mega;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->some = Quantity::some(1);
         $this->byte = Quantity::byte(1);
@@ -129,5 +129,11 @@ class QuantityTest extends \PHPUnit\Framework\TestCase
         $this->assertSame(123, $this->some->multiply(123)->getQuantity());
         $this->assertSame(-42, $this->byte->multiply(-42)->getQuantity());
         $this->assertSame(1.3, $this->mega->multiply(1.3)->getQuantity());
+    }
+
+    public function testIsZero()
+    {
+        $this->assertTrue(Quantity::some(0)->isZero());
+        $this->assertFalse($this->some->isZero());
     }
 }

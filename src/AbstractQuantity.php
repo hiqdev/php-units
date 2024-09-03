@@ -111,6 +111,14 @@ abstract class AbstractQuantity implements QuantityInterface, \JsonSerializable
     /**
      * {@inheritdoc}
      */
+    final public function isZero()
+    {
+        return $this->quantity == 0;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     final public function isConvertible(UnitInterface $unit)
     {
         return $this->unit->isConvertible($unit);

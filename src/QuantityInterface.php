@@ -60,6 +60,12 @@ interface QuantityInterface
     public function isNegative();
 
     /**
+     * Returns if the quantity is zero.
+     * @return bool
+     */
+    public function isZero();
+
+    /**
      * Checks if this quantity is convertible to other unit.
      * @param UnitInterface $unit
      * @return QuantityInterface
