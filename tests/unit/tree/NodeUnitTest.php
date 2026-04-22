@@ -37,7 +37,7 @@ class UnitTest extends \PHPUnit\Framework\TestCase
      */
     protected $mega;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->tree = new TreeConverter();
         $this->byte = $this->tree->getNode('byte');
