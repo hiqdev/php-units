@@ -17,7 +17,7 @@ use hiqdev\php\units\Unit;
  */
 class UnitTest extends \PHPUnit\Framework\TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->bit  = Unit::bit();
         $this->byte = Unit::byte();

@@ -4,7 +4,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/hiqdev/php-units/v/stable)](https://packagist.org/packages/hiqdev/php-units)
 [![Total Downloads](https://poser.pugx.org/hiqdev/php-units/downloads)](https://packagist.org/packages/hiqdev/php-units)
-[![Build Status](https://img.shields.io/travis/hiqdev/php-units.svg)](https://travis-ci.org/hiqdev/php-units)
+[![Tests](https://github.com/hiqdev/php-units/actions/workflows/tests.yml/badge.svg)](https://github.com/hiqdev/php-units/actions)
 [![Scrutinizer Code Coverage](https://img.shields.io/scrutinizer/coverage/g/hiqdev/php-units.svg)](https://scrutinizer-ci.com/g/hiqdev/php-units/)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/hiqdev/php-units.svg)](https://scrutinizer-ci.com/g/hiqdev/php-units/)
 

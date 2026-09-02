@@ -1,0 +1,61 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  PHPUnit:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['7.4', '8.0', '8.1', '8.2']
+    name: PHP ${{ matrix.php }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: composer:v2
+
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v5
+        with:
+          path: vendor
+          key: ${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
+
+      - name: Composer install
+        if: steps.composer-cache.outputs.cache-hit != 'true'
+        run: composer install -n
+
+      - name: PHPUnit
+        run: vendor/bin/phpunit
+
+  Coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          coverage: pcov
+          tools: composer:v2
+
+      - name: Composer install
+        run: composer install -n
+
+      - name: PHPUnit with coverage
+        run: vendor/bin/phpunit --coverage-clover=coverage.clover
+
+      - name: Download ocular.phar
+        run: wget https://github.com/scrutinizer-ci/ocular/releases/download/1.6.0/ocular.phar
+
+      - name: Upload coverage to Scrutinizer
+        run: php ocular.phar code-coverage:upload --repository=g/hiqdev/php-units --format=php-clover coverage.clover

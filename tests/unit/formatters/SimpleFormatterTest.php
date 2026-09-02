@@ -18,7 +18,7 @@ class SimpleFormatterTest extends TestCase
      */
     protected $formatter;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->formatter = new SimpleFormatter();
     }

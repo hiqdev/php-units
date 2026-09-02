@@ -27,6 +27,7 @@ nbproject
 
 # phpunit generated files
 coverage.clover
+.phpunit.result.cache
 
 # Binaries
 chkipper.phar

@@ -43,10 +43,12 @@
             "homepage": "http://hiqdev.com/"
         }
     ],
+    "require": {
+        "php": ">=7.4"
+    },
     "require-dev": {
-        "symfony/yaml": "^3.0 | ^2.0",
-        "hiqdev/hidev-php": "dev-master",
-        "hiqdev/hidev-hiqdev": "dev-master"
+        "symfony/yaml": "^4.4 | ^5.4 | ^6.0",
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "psr-4": {
