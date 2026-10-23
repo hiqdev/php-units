@@ -346,4 +346,14 @@ return array (
     'parent' => 'power',
     'factor' => 1000,
   ),
+  'rps' =>
+  array (
+    'parent' => '',
+    'factor' => 1,
+  ),
+  'krps' =>
+  array (
+    'parent' => 'rps',
+    'factor' => 1000,
+  ),
 );

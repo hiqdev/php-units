@@ -41,6 +41,9 @@ class UnitTest extends \PHPUnit\Framework\TestCase
 
         $this->usd  = Unit::usd();
         $this->eur  = Unit::eur();
+
+        $this->rps  = Unit::rps();
+        $this->krps = Unit::krps();
     }
 
     public function testSame()
@@ -104,6 +107,14 @@ class UnitTest extends \PHPUnit\Framework\TestCase
     {
         $this->assertConvert(1440, $this->minute, $this->day);
         $this->assertConvert(1000, $this->mb, $this->gb);
+    }
+
+    public function testConvertFractional()
+    {
+        // assertConvert() only compares integer factors; a request rate price is
+        // often fractional once converted to its billing unit (1500 rps = 1.5 krps).
+        $this->assertSame(1.5, $this->rps->convert($this->krps, 1500));
+        $this->assertSame(1500.0, $this->krps->convert($this->rps, 1.5));
     }
 
     public function testUnknownUnit()
