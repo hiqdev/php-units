@@ -74,3 +74,6 @@ power:
     W:  1
     kw: 1000
     kW: 1000
+
+rps:
+    krps: 1000
