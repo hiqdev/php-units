@@ -17,6 +17,28 @@ use hiqdev\php\units\Unit;
  */
 class UnitTest extends \PHPUnit\Framework\TestCase
 {
+    protected Unit $bit;
+    protected Unit $byte;
+    protected Unit $kilo;
+    protected Unit $mega;
+    protected Unit $giga;
+    protected Unit $kb;
+    protected Unit $mb;
+    protected Unit $gb;
+    protected Unit $bps;
+    protected Unit $kbps;
+    protected Unit $mbps;
+    protected Unit $gbps;
+    protected Unit $minute;
+    protected Unit $min;
+    protected Unit $hour;
+    protected Unit $day;
+    protected Unit $week;
+    protected Unit $usd;
+    protected Unit $eur;
+    protected Unit $rps;
+    protected Unit $krps;
+
     protected function setUp(): void
     {
         $this->bit  = Unit::bit();
