@@ -68,7 +68,7 @@ interface QuantityInterface
     /**
      * Checks if this quantity is convertible to other unit.
      * @param UnitInterface $unit
-     * @return QuantityInterface
+     * @return bool
      */
     public function isConvertible(UnitInterface $unit);
 

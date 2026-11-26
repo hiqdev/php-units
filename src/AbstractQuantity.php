@@ -222,8 +222,8 @@ abstract class AbstractQuantity implements QuantityInterface, \JsonSerializable
     }
 
     /**
-     * @param string $unit
-     * @var float|int|string $quantity
+     * @param string|UnitInterface $unit
+     * @param float|int|string $quantity
      * @return static
      */
     public static function create($unit, $quantity)
@@ -235,8 +235,9 @@ abstract class AbstractQuantity implements QuantityInterface, \JsonSerializable
      * Returns unit for given unit name.
      * The only function to change in child classes.
      * XXX Should be defined as abstract but `abstract static` is not supported in PHP5.
-     * @param string $name
+     * @param string|UnitInterface $unit
      * @return UnitInterface
+     * @psalm-suppress UndefinedClass, InvalidThrow yii is not a dependency; consuming applications provide it
      */
     protected static function findUnit($unit)
     {

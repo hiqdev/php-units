@@ -174,6 +174,9 @@ class RootUnit implements UnitInterface
         return $this->getCalculator()->divide($quantity, $this->factor);
     }
 
+    /**
+     * @return RootUnit
+     */
     public function getNode(UnitInterface $unit)
     {
         return $this->tree->getNode($unit);
