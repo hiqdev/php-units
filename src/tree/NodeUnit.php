@@ -22,7 +22,7 @@ use Closure;
 class NodeUnit extends RootUnit
 {
     /**
-     * @var null|RootUnit null when root
+     * @var RootUnit
      */
     protected $parent;
 

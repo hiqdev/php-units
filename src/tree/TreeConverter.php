@@ -99,14 +99,14 @@ class TreeConverter implements ConverterInterface
     }
 
     /**
-     * @var NodeUnit[]
+     * @var RootUnit[]
      */
     private $nodes;
 
     /**
      * Returns tree unit by name or unit.
-     * @param string|UnitInterface
-     * @return NodeUnit
+     * @param string|UnitInterface $unit
+     * @return RootUnit
      */
     public function getNode($unit)
     {

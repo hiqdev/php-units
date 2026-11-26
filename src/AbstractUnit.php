@@ -98,6 +98,9 @@ abstract class AbstractUnit implements UnitInterface, JsonSerializable
      */
     protected static $units;
 
+    /**
+     * @psalm-suppress UnusedParam
+     */
     final public static function __callStatic($name, $args)
     {
         return static::create($name);
