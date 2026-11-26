@@ -237,7 +237,7 @@ abstract class AbstractQuantity implements QuantityInterface, \JsonSerializable
      * XXX Should be defined as abstract but `abstract static` is not supported in PHP5.
      * @param string|UnitInterface $unit
      * @return UnitInterface
-     * @psalm-suppress UndefinedClass, InvalidThrow yii is not a dependency; consuming applications provide it
+     * @psalm-suppress UndefinedClass, InvalidThrow
      */
     protected static function findUnit($unit)
     {

@@ -29,7 +29,6 @@
 
         <MissingOverrideAttribute errorLevel="suppress" />
 
-        <!-- Library API: called by consuming applications, outside src/. -->
         <UnusedClass errorLevel="suppress" />
         <PossiblyUnusedMethod errorLevel="suppress" />
         <PossiblyUnusedProperty>
